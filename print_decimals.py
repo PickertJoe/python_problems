@@ -2,8 +2,6 @@
 
 import math as math
 
-prompt1 = "Please enter your menu choice: "
-prompt2 = "Please enter your choice of decimal places: "
 menulist = ["A", "B", "C"]
 
 while True:
