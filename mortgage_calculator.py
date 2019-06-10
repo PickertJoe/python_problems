@@ -52,7 +52,9 @@ def get_payment():
 
 def get_term_length():
     """A function to calculate the time left of a user's mortgage"""
-    principal, interest_rate, compound_interval, payment = get_info("2")
+    # principal, interest_rate, compound_interval, payment = get_info("2")
+    print("This functionality coming soon! Stay tuned...")
+    return
 
 
 def get_info(option):
@@ -73,7 +75,7 @@ def show_results(answer, choice_input):
     if choice_input == "1":
         print("Your monthly mortgage payment will be: $" + str(round(answer, 2)))
     else:
-        print("You have " + str(answer) + " years left until your mortgage is paid off!")
+        print("You have " + str(answer) + " months left until your mortgage is paid off!")
 
 
 main()
