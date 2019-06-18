@@ -14,7 +14,7 @@ class Stack:
         self.items.append(item)
 
     def pop(self):
-        self.items.pop()
+        return self.items.pop()
 
     def peek(self):
         return self.items[len(self.items) - 1]
@@ -59,15 +59,25 @@ def dec_to_bin():
         value = value // 2
 
     result = ''
-    print(bin_stack.peek())
-    while not bin_stack.isEmpty():
+    while bin_stack.size() > 0:
         result = result + str(bin_stack.pop())
 
-    show_results(original, bin_stack, 'a')
+    show_results(original, result, 'a')
 
 
 def bin_to_dec():
     """A function to convert a binary value into its decimal representation"""
+    original = grab_input('b')
+    value = [int(x) for x in str(original)]
+    print(value)
+    positional = [2**i for i in range(0, len(value))]
+    print(positional)
+    product = []
+    for i in range(0, len(value)):
+        product.append(positional[-(1 + i)] * value[i])
+
+    final = sum(product)
+    show_results(original, final, 'b')
 
 
 def grab_input(conversion):
@@ -103,7 +113,9 @@ def grab_input(conversion):
 def show_results(original, value, conversion):
     """A function to share the results of the conversion with the user"""
     if conversion == 'a':
-        print("The binary representation of " + str(original) + " is :" + value)
+        print("The binary representation of " + str(original) + " is : " + value)
+    else:
+        print("The decimal representation of " + str(original) + " is: " + str(value))
 
 
 main()
