@@ -1,2 +1,2 @@
 # python_projects
-A collection of various algorithm problems that I have solved using Python
+A collection of various algorithmic problems that I have solved using Python
